@@ -1,0 +1,62 @@
+<?xml version="1.0" ?>
+<odoo>
+    <data>
+        <!-- Add fields to form View -->
+        <!--        <record id="sale_form_view_inherit_moaz" model="ir.ui.view">-->
+        <!--            <field name="name">sale.order.inherit.moaz</field>-->
+        <!--            <field name="model">sale.order</field>-->
+        <!--            <field name="inherit_id" ref="sale.view_order_form"/>-->
+        <!--            <field name="arch" type="xml">-->
+        <!--                <xpath expr="//field[@name='name']" position="after">-->
+        <!--                    <field name="sale_order_type"/>-->
+        <!--                </xpath>-->
+
+        <!--            </field>-->
+        <!--        </record>-->
+        <!-- Hide un-necessary Fields and Buttons-->
+        <record id="sale_form_view_inherited_moaz" model="ir.ui.view">
+            <field name="name">sale.order.inherited.moaz</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_order_form"/>
+            <field name="arch" type="xml">
+                <!-- Now we will hide all un-neccessary Fields from Partners -->
+                <field name="validity_date" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </field>
+                <!-- Hide From pages -->
+                <field name="require_signature" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </field>
+                <field name="require_payment" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </field>
+                <field name="client_order_ref" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </field>
+                <field name="tag_ids" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </field>
+                <field name="analytic_account_id" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </field>
+                <field name="origin" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </field>
+                <field name="campaign_id" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </field>
+                <field name="medium_id" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </field>
+                <field name="source_id" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </field>
+                <field name="fiscal_position_id" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </field>
+            </field>
+        </record>
+        <!-- Test header -->
+
+    </data>
+</odoo>

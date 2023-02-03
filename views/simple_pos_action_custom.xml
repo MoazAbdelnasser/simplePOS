@@ -1,0 +1,20 @@
+<?xml version="1.0" ?>
+<odoo>
+    <data>
+        <record id="account.action_move_out_invoice_type" model="ir.actions.act_window">
+            <field name="name">Sale Invoices</field>
+        </record>
+        <record id="account.action_move_in_invoice_type" model="ir.actions.act_window">
+            <field name="name">Purchage Invoices</field>
+        </record>
+        <!-- Edit Customers Action (Specify the domain to see just vendors-->
+        <record id="account.res_partner_action_customer" model="ir.actions.act_window">
+            <field name="domain">[('ss','=', 'customer')]</field>
+        </record>
+        <!-- Edit Vendors Action (Specify the domain to see vendors only)-->
+        <record id="account.res_partner_action_supplier" model="ir.actions.act_window">
+            <field name="domain">[('ss','=', 'vendor')]</field>
+            <field name="context">{}</field>
+        </record>
+    </data>
+</odoo>

@@ -1,0 +1,54 @@
+<?xml version="1.0" ?>
+<odoo>
+    <data>
+        <record id="partner_form_view_inherit_moaz" model="ir.ui.view">
+            <field name="name">res.partner.inherit.moaz</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='street']" position="before">
+                    <field name="ss"/>
+                </xpath>
+                <!-- Now we will hide all un-neccessary Fields from Partners -->
+                <field name="street2" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </field>
+                <field name="function" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </field>
+                <field name="title" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </field>
+                <field name="category_id" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </field>
+                <field name="type" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </field>
+                <!-- To Modify Exiting fields attributes -->
+                <field name="vat" position="attributes">
+                    <attribute name="attrs">
+                        {'required':[('company_type','=','company')]}
+                    </attribute>
+                </field>
+            </field>
+        </record>
+
+        <!-- Add New filters for Conacts -->
+        <record id="res_partner_view_search_inherit_moaz" model="ir.ui.view">
+            <field name="name">res.partner.view.search.inherit.moaz</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_res_partner_filter"/>
+            <field name="arch" type="xml">
+                <xpath expr="//filter[@name='type_company']" position="after">
+                    <separator/>
+                    <filter string="Customers" name="ss" domain="[('ss', '=', 'customer')]"/>
+                    <filter string="Vendors" name="ss" domain="[('ss', '=', 'vendor')]"/>
+                    <filter string="My company" name="ss" domain="[('ss', '=', 'owner')]"/>
+                </xpath>
+            </field>
+        </record>
+
+
+    </data>
+</odoo>
