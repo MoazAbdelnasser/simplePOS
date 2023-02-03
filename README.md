@@ -6,7 +6,7 @@
 <li> Invoicing Module </li>
 </ul>
 <ul>
-<h2>Modules used by Inheritance</h2>
+<h2>Modules used In Inheritance</h2>
 <h3> Python inheritance  \ Views Inheritance </h3>
 <ol> res.partner Module </ol>
 <ol> sale.order Module </ol>
